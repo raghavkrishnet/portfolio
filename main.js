@@ -67,26 +67,31 @@ previousBtn.addEventListener("click", () => {
 });
 
 const zoomBtn = document.querySelector(".image-gallery-container .zoom-btn");
+let zoomLevel = 1;
 const openNewTabBtn = document.querySelector(".image-gallery-container .open-new-tab-btn");
 const fullscreenBtn = document.querySelector(".image-gallery-container .fullscreen-btn");
 
 // Zoom functionality
 zoomBtn.addEventListener("click", () => {
-  lightboxImage.classList.toggle("zoomed");
-  const isZoomed = lightboxImage.classList.contains("zoomed");
+  // Increment zoom level, loop back to 1x if over 5x
+  zoomLevel = zoomLevel < 5 ? zoomLevel + 1 : 1;
 
-  zoomBtn.title = isZoomed ? "Unzoom" : "Zoom";
+  // Apply the zoom level to the image
+  lightboxImage.style.transform = `scale(${zoomLevel})`;
 
+  // Update the button's title based on the current zoom level
+  zoomBtn.title = `Zoom ${zoomLevel}x`;
+
+  // Update the icon depending on the zoom level
   const icon = zoomBtn.querySelector("i");
-  icon.classList.toggle("fa-search-plus", !isZoomed);
-  icon.classList.toggle("fa-search-minus", isZoomed);
+  icon.classList.remove("fa-search-plus", "fa-search-minus");
+  if (zoomLevel === 1) {
+    icon.classList.add("fa-search-plus");
+  } else {
+    icon.classList.add("fa-search-minus");
+  }
 
-  console.log("Zoom state:", isZoomed ? "Zoomed In" : "Zoomed Out");
-});
-
-// Open in new tab functionality
-openNewTabBtn.addEventListener("click", () => {
-  window.open(lightboxImage.src, '_blank');
+  console.log("Zoom level:", `${zoomLevel}x`);
 });
 
 // Fullscreen functionality
