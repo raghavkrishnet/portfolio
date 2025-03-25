@@ -37,6 +37,7 @@ body * {
 }
 
 .image-gallery-container .images .image {
+  height: 190px;
   position: relative;
   overflow: hidden;
   border-radius: 8px;
