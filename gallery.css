@@ -90,6 +90,7 @@ body * {
   position: relative;
   max-width: 100%;
   max-height: 100%;
+  overflow: hidden;
 }
 
 .lightbox-content img {
@@ -205,4 +206,13 @@ body * {
     top: 10px;
     right: 10px;
   }
+}
+
+.image-gallery-container .lightbox.zoomed img {
+  cursor: grab;
+}
+
+.image-gallery-container .lightbox.active .lightbox-content {
+  overflow: auto; /* Enable scrolling when zoomed */
+  cursor: grab;
 }
