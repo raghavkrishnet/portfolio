@@ -204,83 +204,35 @@ Using research, wireframes, and prototypes, I craft seamless user experiences th
 	<!-- contact section starts -->
 
 	<section class="s2">
-    <div class="main-container">
-        <a href=""></a>
-        <h3 style="text-align: center;">Get In Touch</h3>
+		<div class="main-container">
+			<a href=""></a>
+			<h3 style="text-align: center;">Get In Touch</h3>
 
-        <form id="contactForm" action="https://formspree.io/f/mjkrzogo/" method="POST">
-            <a name="contact"></a>
-            
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" class="input-field" required placeholder="Write your name here...">
-            </div>
+			<form action="mail.php" method="post" id="contact-form">
+				<a name="contact"></a>
 
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" class="input-field" required placeholder="Write subject here..">
-            </div>
+				<label>Name</label>
+				<input class="input-field" type="text" name="name" required placeholder="Write your name here...">
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="_replyto" class="input-field" required placeholder="Let us know how to contact you back...">
-            </div>
+				<label>Subject</label>
+				<input class="input-field" type="text" name="subject" required placeholder="Write subject here..">
 
-            <div class="form-group">
-                <label for="number_3">Contact No</label>
-                <input type="number" id="number_3" name="number_3" class="input-field" required placeholder="Contact number">
-            </div>
+				<label>Email</label>
+				<input class="input-field" type="email" name="email" required
+					placeholder="Let us know how to contact you back...">
 
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" class="input-field" required placeholder="What would you like to tell us.."></textarea>
-            </div>
+				<label>Contact No</label>
+				<input class="input-field" id="number_3" type="number" class="lf-form-text " name="number_3" required
+					value placeholder="Contact number">
 
-            <button type="submit" id="submit-btn">Send</button>
-        </form>
+				<label>Message</label>
+				<textarea class="input-field" name="message" required
+					placeholder="What would you like to tell us.."></textarea>
 
-        <div id="successMessage" class="success-message">
-            Thank you! Your message has been sent successfully.
-        </div>
-    </div>
-</section>
-
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Get the form action URL
-        const form = e.target;
-        const action = form.getAttribute('action');
-
-        // Submit the form using Fetch API
-        fetch(action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                // Show success message
-                document.getElementById('successMessage').style.display = 'block';
-                // Reset form
-                form.reset();
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    document.getElementById('successMessage').style.display = 'none';
-                }, 5000);
-            } else {
-                throw new Error('Form submission failed');
-            }
-        })
-        .catch(error => {
-            alert('There was a problem sending your message. Please try again later.');
-            console.error('Error:', error);
-        });
-    });
-</script>
+				<input id="submit-btn" type="submit" value="Send">
+			</form>
+		</div>
+	</section>
 	<!-- contact section ends -->
 
 	<script type="text/javascript" src="script.js"></script>
