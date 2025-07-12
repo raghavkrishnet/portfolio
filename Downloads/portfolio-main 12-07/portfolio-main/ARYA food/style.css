@@ -1,0 +1,594 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --primaryColor: #f1f1f1;
+  --black: #222;
+  --black2: #555;
+  --black3: #252525;
+  --black4: #000;
+  --black5: #212529;
+  --orange: #eb0028;
+  --white: #fff;
+  --icon: #ffc8c2;
+  --grey: #959595;
+  --grey2: #666;
+  --grey3: #ccc;
+  --secondaryColor: #2b1f4d;
+  --yellow: #ffcc00;
+  --green: #59b210;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f7f7f7;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+#navbar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px; /* Adjusted for spacing on both ends */
+}
+
+#navbar .logo {
+  margin: 0;
+  padding: 0;
+}
+
+#navbar .logo a {
+  text-decoration: none;
+  text-transform: uppercase;
+  align-items: center;
+  display: flex;
+  gap: 1.2rem;
+}
+
+#navbar .logo a img {
+  height: 60px;
+  cursor: pointer;
+}
+
+#navbar ul {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  gap: 1rem;
+}
+
+#navbar ul li {
+  color: gray;
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  font-size: 15px;
+}
+
+#navbar ul li a {
+  color: #9b9dad;
+  display: inline-block;
+  padding: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#navbar ul li a:hover {
+  color: #8b1b1b;
+}
+
+#navbar ul li::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background: #8b1b1b;;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+#navbar ul li:hover::after {
+  width: 100%;
+}
+
+/* Navigation Icons */
+.nav__icons {
+  display: flex;
+}
+
+.nav__icons .iconitem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav__icons .iconitem img {
+  height: 1.2rem;
+}
+
+.nav__icons .iconitem:hover {
+  background-color: var(--icon);
+}
+
+.nav__icons .iconitem:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.nav__icons #cart__total {
+  font-size: 0.6rem;
+  position: absolute;
+  top: 2px;
+  right: -6px;
+  background-color: var(--orange);
+  padding: 0.2rem 0.4rem;
+  border-radius: 100%;
+  color: var(--primaryColor);
+}
+
+/* Responsive Menu */
+.menu-btn {
+  display: none;
+}
+
+.menu-btn__burger {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+.menu-btn.open .menu-btn__burger:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.open .menu-btn__burger:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.open .menu-btn__burger:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media screen and (max-width: 768px) {
+  #navbar ul {
+    display: none;
+  }
+
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #navbar.responsive ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
+  }
+
+  #navbar.responsive ul li {
+    display: block;
+    margin: 15px 0;
+    text-align: center;
+  }
+}
+
+/* Home section padding to accommodate fixed header */
+.home {
+  padding-top: 80px; 
+}
+
+/* Home Section */
+#home_container {
+  padding-top: 80px;
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  z-index: -1;
+}
+
+#home_container .home {
+  margin: 0 20px;
+  height: 70vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.home .text_section {
+  max-width: 600px;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.home .text_section h2 {
+  text-transform: uppercase;
+  text-align: left;
+  color: #333;
+  font-size: 5rem;
+  font-family: "Roboto", sans-serif; /* Updated font-family */
+}
+
+.home .text_section h2 span {
+  color: #8b1b1b;
+}
+
+.home .text_section p {
+  max-width: 500px;
+  font-family: "Arial", sans-serif;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.home .text_section a {
+  width: 170px;
+  padding: 12px 8px;
+  text-align: center;
+  text-transform: uppercase;
+  background: rgb(139, 27, 27);
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+}
+
+.home .text_section a:hover {
+  background: transparent;
+  color: gray;
+}
+
+.home .img_section {
+  width: 600px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home .img_section img {
+  width: 100%;
+  animation: float 3s linear infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(3rem);
+  }
+}
+
+.home .thumb {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.home .thumb li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#home_container .home .thumb li:hover {
+  transform: translateY(-15px);
+}
+
+.thumb li img {
+  max-width: 40px;
+}
+
+/* Our Special Dishes Section */
+#special_dishes {
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+#special_dishes h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  font-family: "Roboto", sans-serif; /* Updated font-family */
+}
+
+#special_dishes h2 span {
+  color: #8b1b1b;
+}
+
+#special_dishes .dishes_card {
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dishes_card .card1 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dishes_card .card1:hover {
+  transform: translateY(-10px);
+}
+
+.dishes_card .card1 img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.dishes_card .card1 .card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--black);
+  font-family: "Arial", sans-serif;
+}
+
+.dishes_card .card1 .card-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--black2);
+  font-family: "Arial", sans-serif;
+}
+
+/* Most Popular Dishes Section */
+#popular_dishes {
+  padding: 50px 20px;
+  background-color: #f7f7f7;
+}
+
+#popular_dishes h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  font-family: "Arial", sans-serif;
+}
+
+#popular_dishes h2 span {
+  color: #8b1b1b;
+}
+
+.popular_foods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.popular_foods .box1 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.popular_foods .box1:hover {
+  transform: translateY(-10px);
+}
+
+.popular_foods .box1 img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Processing Section */
+#processing_section {
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+#processing_section h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  font-family: "Arial", sans-serif;
+}
+
+#processing_section h2 span {
+  color: #8b1b1b;
+}
+
+.process_management {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.process_management .card_one {
+  flex: 1;
+  min-width: 300px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.process_management .card_one img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* customer review sectio starts */
+#review_section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+#review_section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+#review_section h2 span {
+  color: rgb(139, 27, 37);
+}
+
+#review_section .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#review_section .container1 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+#review_section .container1:hover {
+  transform: translateY(-10px);
+}
+
+#review_section .container1 img {
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+#review_section .container1 .name {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: "Arial", sans-serif;
+}
+
+#review_section .stars {
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+#review_section .review_comments {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  font-family: "Arial", sans-serif;
+}
+
+#review_section .container1 span {
+  font-size: 0.9rem;
+  color: #999;
+  font-family: "Arial", sans-serif;
+}
+
+/* customer review section ends */
+
+/* footer section starts */
+
+.footer {
+  background: #fff;
+  padding: 30px 0px;
+  font-family: "Play", sans-serif;
+  text-align: center;
+}
+
+.footer .row {
+  width: 100%;
+  margin: 1% 0%;
+  padding: 0.6% 0%;
+  color: gray;
+  font-size: 0.8em;
+}
+
+.footer .row a {
+  text-decoration: none;
+  color: rgb(139, 27, 37);
+  transition: 0.5s;
+}
+
+.footer .row a:hover {
+  color: gray;
+}
+
+.footer .row ul {
+  width: 100%;
+}
+
+.footer .row ul li {
+  display: inline-block;
+  margin: 0px 30px;
+}
+
+.footer .row a i {
+  font-size: 2em;
+  margin: 0% 1%;
+}
+
+@media (max-width: 720px) {
+  .footer {
+    text-align: left;
+    padding: 5%;
+  }
+  .footer .row ul li {
+    display: block;
+    margin: 10px 0px;
+    text-align: left;
+  }
+  .footer .row a i {
+    margin: 0% 3%;
+  }
+}
+
+/* footer section ends */
