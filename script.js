@@ -10,7 +10,6 @@ if(theme == null){
 
 let themeDots = document.getElementsByClassName('theme-dot')
 
-
 for (var i=0; themeDots.length > i; i++){
 	themeDots[i].addEventListener('click', function(){
 		let mode = this.dataset.mode
@@ -22,10 +21,24 @@ for (var i=0; themeDots.length > i; i++){
 function setTheme(mode){
 	if(mode == 'light'){
 		document.getElementById('theme-style').href = 'default.css'
+		// Show light LinkedIn cover, hide dark
+		let lightImg = document.getElementById('social_img_light');
+		let darkImg = document.getElementById('social_img_dark');
+		if (lightImg && darkImg) {
+			lightImg.style.display = 'block';
+			darkImg.style.display = 'none';
+		}
 	}
 
 	if(mode == 'blue'){
 		document.getElementById('theme-style').href = 'blue.css'
+		// Show dark LinkedIn cover, hide light
+		let lightImg = document.getElementById('social_img_light');
+		let darkImg = document.getElementById('social_img_dark');
+		if (lightImg && darkImg) {
+			lightImg.style.display = 'none';
+			darkImg.style.display = 'block';
+		}
 	}
 	localStorage.setItem('theme', mode)
 }
@@ -92,3 +105,16 @@ if (prevButton) {
 		moveCarousel((currentIndex - 1 + posts.length) % posts.length); // Wrap around at the beginning
 	});
 }
+
+// Truncate project descriptions 
+document.addEventListener("DOMContentLoaded", function() {
+    const descriptions = document.querySelectorAll('.card-description');
+
+    descriptions.forEach(desc => {
+      const words = desc.textContent.trim().split(/\s+/);
+      if (words.length > 10) {
+        const truncated = words.slice(0, 10).join(' ') + '...';
+        desc.textContent = truncated;
+      }
+    });
+});

@@ -278,21 +278,22 @@ h6 { font-size: 16px;}
 .social-links ul li {
     width: 5%;
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 10px;
     color: var(--mainText);
-	border: 1px solid rgb(23, 162, 184);
+	border: 1px solid var(--borderColor);
     border-radius: 50%;
     padding: 0.8em;
-    /* background-color: aliceblue; */
 }
 
 
-#social_img{
+#social_img_light, #social_img_dark{
+	width: 100%;
+	height: auto;
+	border-radius: 20px;
 	width: 100%;
     border-radius: 20px;
-	
+	display: block;
 }
-
 
 .post-wrapper{
 	display: grid;
@@ -333,9 +334,56 @@ h6 { font-size: 16px;}
 
 
 .carousel-wrapper {
+	position: relative;
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--buttonColor);
+  color: var(--mainColor);
+  border: 1px solid var(--borderColor);
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Hide buttons on small screens */
+@media only screen and (max-width: 767px) {
+  .prev-btn, .next-btn {
+    display: none;
+  }
+
+  /* Enable horizontal scrolling on small screens */
+  .carousel-track-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .carousel-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
 }
 
 .carousel-track {
@@ -346,10 +394,11 @@ h6 { font-size: 16px;}
 
 .carousel-card {
     min-width: 10%;
-	width: 35%;
+	width: 20%;
     box-sizing: border-box;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: var(--secondaryColor);
+	border: 1px solid var(--borderColor);
     border-radius: 10px;
     margin: 10px;
     display: flex;
@@ -359,7 +408,7 @@ h6 { font-size: 16px;}
 
 .card-img {
     width: 100%;
-    height: 299px;
+    height: 300px;
     border-radius: 10px;
 }
 
@@ -371,18 +420,18 @@ h6 { font-size: 16px;}
 .card-title {
     font-size: 18px;
     margin: 10px 0;
-	color: black;
+	color: var(--mainText);
 }
 
 .card-description {
     font-size: 14px;
     margin: 10px 0;
-	color: black;
+	color: var(--secondaryText);
 }
 
 .card-link {
     font-size: 14px;
-    color: #007BFF;
+    color: var(--buttonColor);
     text-decoration: none;
     margin-top: auto;
 }
@@ -395,9 +444,6 @@ h6 { font-size: 16px;}
     animation-play-state: paused;
 }
 
-
-
-
 /* contact section */
 #contact-form{
 	display: block;
@@ -408,7 +454,6 @@ h6 { font-size: 16px;}
 	border-radius: 5px;
 	background-color: var(--mainColor);
 	margin-bottom: 50px;
-
 }
 
 #contact-form label{
@@ -424,20 +469,15 @@ h6 { font-size: 16px;}
 .input-field{
 	width: 100%;
 	margin-top: 10px;
-	
 	border: 0;
 	background: none;
 	outline: none;
 	border-bottom: 2px solid #bebed2;
 	font-family: 'Montserrat',sans-serif;
-	/* background-color: var(--secondaryColor); */
-	/* border-radius: 5px; */
-	/* border:1px solid var(--borderColor); */
 	font-size: 14px;
 	resize: none;
     transition: all .3s;
 }
-
 
 #submit-btn{
 	margin-top: 10px;

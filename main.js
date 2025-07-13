@@ -94,6 +94,12 @@ zoomBtn.addEventListener("click", () => {
   console.log("Zoom level:", `${zoomLevel}x`);
 });
 
+// Open image in a new tab
+openNewTabBtn.addEventListener("click", () => {
+  window.open(lightboxImage.src, '_blank');
+  console.log("Image opened in a new tab:", lightboxImage.src);
+});
+
 // Fullscreen functionality
 fullscreenBtn.addEventListener("click", () => {
   if (isFullscreen()) {
