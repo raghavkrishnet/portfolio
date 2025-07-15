@@ -1,120 +1,150 @@
-console.log('Its working')
+console.log("It's working");
 
-let theme = localStorage.getItem('theme')
+// ================== THEME MANAGEMENT ==================
+let theme = localStorage.getItem("theme");
 
-if(theme == null){
-	setTheme('light')
-}else{
-	setTheme(theme)
+if (!theme) {
+  setTheme("light");
+} else {
+  setTheme(theme);
 }
 
-let themeDots = document.getElementsByClassName('theme-dot')
-
-for (var i=0; themeDots.length > i; i++){
-	themeDots[i].addEventListener('click', function(){
-		let mode = this.dataset.mode
-		console.log('Option clicked:', mode)
-		setTheme(mode)
-	})
+const themeDots = document.getElementsByClassName("theme-dot");
+for (let i = 0; i < themeDots.length; i++) {
+  themeDots[i].addEventListener("click", function () {
+    let mode = this.dataset.mode;
+    console.log("Option clicked:", mode);
+    setTheme(mode);
+  });
 }
 
-function setTheme(mode){
-	if(mode == 'light'){
-		document.getElementById('theme-style').href = 'default.css'
-		// Show light LinkedIn cover, hide dark
-		let lightImg = document.getElementById('social_img_light');
-		let darkImg = document.getElementById('social_img_dark');
-		if (lightImg && darkImg) {
-			lightImg.style.display = 'block';
-			darkImg.style.display = 'none';
-		}
-	}
+function setTheme(mode) {
+  const themeLink = document.getElementById("theme-style");
+  const lightImg = document.getElementById("social_img_light");
+  const darkImg = document.getElementById("social_img_dark");
 
-	if(mode == 'blue'){
-		document.getElementById('theme-style').href = 'blue.css'
-		// Show dark LinkedIn cover, hide light
-		let lightImg = document.getElementById('social_img_light');
-		let darkImg = document.getElementById('social_img_dark');
-		if (lightImg && darkImg) {
-			lightImg.style.display = 'none';
-			darkImg.style.display = 'block';
-		}
-	}
-	localStorage.setItem('theme', mode)
+  switch (mode) {
+    case "light":
+      themeLink.href = "default.css";
+      if (lightImg && darkImg) {
+        lightImg.style.display = "block";
+        darkImg.style.display = "none";
+      }
+      break;
+    case "blue":
+      themeLink.href = "blue.css";
+      if (lightImg && darkImg) {
+        lightImg.style.display = "none";
+        darkImg.style.display = "block";
+      }
+      break;
+  }
+
+  localStorage.setItem("theme", mode);
 }
 
-const carouselTrack = document.querySelector('.carousel-track');
-const posts = Array.from(document.querySelectorAll('.carousel-card'));
-const nextButton = document.querySelector('.next-btn');
-const prevButton = document.querySelector('.prev-btn');
+// ================== CAROUSEL FUNCTIONALITY ==================
+const carouselTrack = document.querySelector(".carousel-track");
+const posts = Array.from(document.querySelectorAll(".carousel-card"));
+const nextButton = document.querySelector(".next-btn");
+const prevButton = document.querySelector(".prev-btn");
+
 let currentIndex = 0;
-let isCarouselMoving = true; // Flag to track carousel state
+let isCarouselMoving = true;
 
-function moveCarousel(index) {
-	if (index !== undefined) {
-		currentIndex = index;
-	} else {
-		currentIndex = (currentIndex + 1) % posts.length;
-	}
+function moveCarousel(index = (currentIndex + 1) % posts.length) {
+  currentIndex = index;
 
-	const cardWidth = posts[0].getBoundingClientRect().width;
-	const cardMarginRight = parseFloat(getComputedStyle(posts[0]).marginRight);
-	const totalCardWidth = cardWidth + cardMarginRight;
-	const offset = -currentIndex * totalCardWidth;
+  const card = posts[0];
+  const cardWidth = card.getBoundingClientRect().width;
+  const cardMarginRight = parseFloat(getComputedStyle(card).marginRight);
+  const offset = -currentIndex * (cardWidth + cardMarginRight);
 
-	carouselTrack.style.transform = `translateX(${offset}px)`;
+  carouselTrack.style.transform = `translateX(${offset}px)`;
 }
 
-// Start the carousel movement (conditionally)
+// Auto-scroll every 3 seconds
 let carouselInterval = setInterval(() => {
-	if (isCarouselMoving) {
-		moveCarousel();
-	}
+  if (isCarouselMoving) moveCarousel();
 }, 3000);
 
-// Handle hover events
-carouselTrack.addEventListener('mouseover', () => {
-	isCarouselMoving = false; // Stop autoplay on hover
+// Pause on hover
+carouselTrack.addEventListener("mouseover", () => {
+  isCarouselMoving = false;
 });
 
-carouselTrack.addEventListener('mouseout', () => {
-	isCarouselMoving = true; // Resume autoplay on mouseout (if carousel is still moving)
+carouselTrack.addEventListener("mouseout", () => {
+  isCarouselMoving = true;
 });
 
-// Handle click events for mobile-friendly scrolling (optional)
-if (window.innerWidth < 768) { // Adjust breakpoint as needed
-	carouselTrack.addEventListener('touchstart', () => {
-		isCarouselMoving = false; // Stop autoplay on touch
-	});
-
-	carouselTrack.addEventListener('touchend', () => {
-		// Optional: Implement mobile-specific scrolling logic here
-		// You could use a library like Swiper.js or Hammer.js for touch gestures
-	});
+// Mobile touch pause
+if (window.innerWidth < 768) {
+  carouselTrack.addEventListener("touchstart", () => {
+    isCarouselMoving = false;
+  });
+  carouselTrack.addEventListener("touchend", () => {
+    // Optional: Mobile-specific scrolling logic
+  });
 }
 
-// Handle next/previous button clicks (optional)
+// Navigation buttons
 if (nextButton) {
-	nextButton.addEventListener('click', () => {
-		moveCarousel(currentIndex + 1); // Move to the next card
-	});
+  nextButton.addEventListener("click", () => {
+    moveCarousel(currentIndex + 1);
+  });
 }
 
 if (prevButton) {
-	prevButton.addEventListener('click', () => {
-		moveCarousel((currentIndex - 1 + posts.length) % posts.length); // Wrap around at the beginning
-	});
+  prevButton.addEventListener("click", () => {
+    moveCarousel((currentIndex - 1 + posts.length) % posts.length);
+  });
 }
 
-// Truncate project descriptions 
-document.addEventListener("DOMContentLoaded", function() {
-    const descriptions = document.querySelectorAll('.card-description');
+// ================== TRUNCATE DESCRIPTIONS ==================
+document.addEventListener("DOMContentLoaded", () => {
+  const descriptions = document.querySelectorAll(".card-description");
 
-    descriptions.forEach(desc => {
-      const words = desc.textContent.trim().split(/\s+/);
-      if (words.length > 10) {
-        const truncated = words.slice(0, 10).join(' ') + '...';
-        desc.textContent = truncated;
+  descriptions.forEach((desc) => {
+    const words = desc.textContent.trim().split(/\s+/);
+    if (words.length > 10) {
+      desc.textContent = words.slice(0, 10).join(" ") + "...";
+    }
+  });
+});
+
+// ================== FORM HANDLING ==================
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  // Get the form action URL
+  const form = e.target;
+  const action = form.getAttribute("action");
+  // Submit the form using Fetch API
+  fetch(action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        // Show success message
+		alert("Form Submitted Succesfully")
+        document.getElementById("successMessage").style.display = "block";
+        // Reset form
+        form.reset();
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          document.getElementById("successMessage").style.display = "none";
+        }, 5000);
+      } else {
+        throw new Error("Form submission failed");
       }
+    })
+    .catch((error) => {
+      alert(
+        "There was a problem sending your message. Please try again later."
+      );
+      console.error("Error:", error);
     });
 });
