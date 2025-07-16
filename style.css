@@ -28,7 +28,13 @@ h1, h2, h3, h4, h5, h6, strong{
 	font-weight: 500;
 }
 
-p, li, span, label, input, textarea{
+p, li{
+	color: var(--secondaryText);
+	line-height: 1.5;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+span, label, input, textarea{
 	color: var(--secondaryText);
 	font-family: 'Roboto Mono', monospace;
 }
