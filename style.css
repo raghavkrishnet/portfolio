@@ -573,7 +573,7 @@ h6 {
 @media screen and (max-width: 600px) {
    .cta-status {
     font-size: 12px;
-    padding: 6px 14px;
+    padding: 8px 16px;
   }
 
   .cta-icons .icon {
