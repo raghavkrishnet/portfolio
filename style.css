@@ -447,7 +447,8 @@ h6 {
 
 
 .cta-status {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: 14px;
   color: var(--mainText);
   padding: 10px 20px;
@@ -458,6 +459,7 @@ h6 {
   opacity: 0.85;
   position: relative;
   padding-left: 28px;
+  gap: 8px;
 }
 
 /* Blinking dot */
@@ -573,10 +575,16 @@ h6 {
 /* Responsive */
 @media screen and (max-width: 600px) {
    .cta-status {
-    margin-left: 4px;
     
     font-size: 12px;
-    padding: 8px 16px;
+    padding: 10px 20px 10px 28px;
+    
+  }
+
+  .cta-status::before {
+    left: 14px;
+    width: 6px;
+    height: 6px;
   }
 
   .cta-icons .icon {
