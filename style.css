@@ -219,10 +219,43 @@ h6 {
   border: 2px solid var(--themeDotBorder);
   box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
   cursor: pointer;
+  position: relative;
+}
+
+.theme-dot::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--mainText);
+  color: var(--mainColor);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: 'Roboto Mono', monospace;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 10;
 }
 
 .theme-dot:hover {
   border-width: 5px;
+}
+
+.theme-dot:hover::after {
+  opacity: 1;
+  visibility: visible;
+  margin-bottom: 8px;
+}
+
+/* Adjust for dark theme */
+body[data-theme="blue"] .theme-dot::after {
+  background-color: var(--secondaryColor);
+  color: var(--mainText);
+  border: 1px solid var(--borderColor);
 }
 
 #light-mode {
@@ -257,7 +290,7 @@ h6 {
   border-radius: 10px;
 }
 
-/* About Section */
+/* About me Section */
 .about-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -265,10 +298,103 @@ h6 {
   gap: 100px;
 }
 
-#skills {
+.about-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: var(--secondaryText);
+}
+
+.section-divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--borderColor);
+  margin: 30px 0;
+}
+
+.section-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: var(--mainText);
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* Linear Skills Display */
+.skills-line, .tools-line {
   display: flex;
-  justify-content: space-evenly;
-  background-color: var(--previewShadow);
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.skills-line span, .tools-line span {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--mainColor);
+  border: 1px solid var(--borderColor);
+  border-radius: 20px;
+  font-size: 14px;
+  color: var(--secondaryText);
+  white-space: nowrap;
+}
+
+
+/* Design Tools Grid with Logos */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 20px;
+  align-items: center;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.tool-item span {
+  font-size: 12px;
+  color: var(--secondaryText);
+}
+
+.resume-download {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: var(--buttonColor);
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.resume-link:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 #social_img_light,
@@ -279,41 +405,6 @@ h6 {
   display: block;
 }
 
-/* Posts */
-.post-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 320px);
-  gap: 20px;
-  justify-content: center;
-  padding-bottom: 50px;
-}
-
-.post {
-  border: 1px solid var(--borderColor);
-  box-shadow: -2px 7px 21px -9px rgba(0, 0, 0, 0.75);
-}
-
-.thumbnail {
-  display: block;
-  width: 100%;
-  height: 155px;
-  object-fit: cover;
-}
-
-.post-preview {
-  background-color: #fff;
-  padding: 15px;
-}
-
-.post-title {
-  color: black;
-  margin: 0;
-}
-
-.post-intro {
-  color: #4b5156;
-  font-size: 14px;
-}
 
 /* Grid Layout */
 .grid-wrapper {
@@ -380,6 +471,13 @@ h6 {
 
 .card-link:hover {
   text-decoration: underline;
+}
+
+
+.card-link .fa-arrow-up {
+  transform: rotate(45deg);
+  display: inline-block; 
+  margin-left: 5px; 
 }
 
 /* Contact Form */
@@ -527,6 +625,28 @@ h6 {
 
   .right-column {
     justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-line, .tools-line {
+    gap: 8px;
+  }
+  
+  .skills-line span, .tools-line span {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-line, .tools-line {
+    gap: 6px;
+  }
+  
+  .skills-line span, .tools-line span {
+    padding: 5px 10px;
+    font-size: 12px;
   }
 }
 

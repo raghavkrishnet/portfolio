@@ -43,49 +43,23 @@ function setTheme(mode) {
   localStorage.setItem("theme", mode);
 }
 
+// Tooltip positioning adjustment
+document.querySelectorAll('.theme-dot').forEach(dot => {
+  dot.addEventListener('mouseenter', function() {
+    // Force tooltip above in small screens
+    if (window.innerWidth < 600) {
+      this.style.setProperty('--tooltip-bottom', 'auto');
+      this.style.setProperty('--tooltip-top', '100%');
+    }
+  });
+});
+
 // ================== CAROUSEL FUNCTIONALITY ==================
-const carouselTrack = document.querySelector(".carousel-track");
-const posts = Array.from(document.querySelectorAll(".carousel-card"));
 const nextButton = document.querySelector(".next-btn");
 const prevButton = document.querySelector(".prev-btn");
 
 let currentIndex = 0;
-let isCarouselMoving = true;
 
-function moveCarousel(index = (currentIndex + 1) % posts.length) {
-  currentIndex = index;
-
-  const card = posts[0];
-  const cardWidth = card.getBoundingClientRect().width;
-  const cardMarginRight = parseFloat(getComputedStyle(card).marginRight);
-  const offset = -currentIndex * (cardWidth + cardMarginRight);
-
-  carouselTrack.style.transform = `translateX(${offset}px)`;
-}
-
-// Auto-scroll every 3 seconds
-let carouselInterval = setInterval(() => {
-  if (isCarouselMoving) moveCarousel();
-}, 3000);
-
-// Pause on hover
-carouselTrack.addEventListener("mouseover", () => {
-  isCarouselMoving = false;
-});
-
-carouselTrack.addEventListener("mouseout", () => {
-  isCarouselMoving = true;
-});
-
-// Mobile touch pause
-if (window.innerWidth < 768) {
-  carouselTrack.addEventListener("touchstart", () => {
-    isCarouselMoving = false;
-  });
-  carouselTrack.addEventListener("touchend", () => {
-    // Optional: Mobile-specific scrolling logic
-  });
-}
 
 // Navigation buttons
 if (nextButton) {
