@@ -572,6 +572,7 @@ h6 {
 /* Responsive */
 @media screen and (max-width: 600px) {
    .cta-status {
+    margin-left: 4px;
     font-size: 12px;
     padding: 8px 16px;
   }
