@@ -472,6 +472,7 @@ h6 {
   background-color: var(--buttonColor);
   border-radius: 50%;
   animation: blink 1.2s infinite;
+  gap: 4px;
 }
 
 @keyframes blink {
@@ -573,6 +574,7 @@ h6 {
 @media screen and (max-width: 600px) {
    .cta-status {
     margin-left: 4px;
+    
     font-size: 12px;
     padding: 8px 16px;
   }
