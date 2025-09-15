@@ -80,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   descriptions.forEach((desc) => {
     const words = desc.textContent.trim().split(/\s+/);
-    if (words.length > 10) {
-      desc.textContent = words.slice(0, 10).join(" ") + "...";
+    if (words.length > 15) {
+      desc.textContent = words.slice(0, 15).join(" ") + "...";
     }
   });
 });

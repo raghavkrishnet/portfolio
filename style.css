@@ -370,6 +370,7 @@ body[data-theme="blue"] .theme-dot::after {
 .resume-download {
   text-align: center;
   margin-top: 30px;
+  font-family: "Roboto Mono", monospace;
 }
 
 .resume-link {
