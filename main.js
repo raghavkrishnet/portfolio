@@ -16,7 +16,7 @@
   const counterEl = document.querySelector(".image-counter");
 
   // ------ Gallery + template ------
-  const DATA_URL = 'data/projects.json';
+  const DATA_URL = 'Data/projects.json';
   const gallery = document.querySelector('#project-gallery');
   const tpl = document.querySelector('#project-card-tpl');
 
