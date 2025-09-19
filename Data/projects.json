@@ -1,0 +1,331 @@
+[
+  {
+    "id": 1,
+    "img": "images/gallery-images/web-service.png",
+    "alt": "Screenshot of a modern IT company website offering web development and digital services",
+    "title": "Professional Web Services Company Website Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 2,
+    "img": "images/gallery-images/scooter1.png",
+    "alt": "UI design of an online store showcasing smart electric scooters for sale",
+    "title": "Smart Electric Scooter E-Commerce Website Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 3,
+    "img": "images/gallery-images/food.png",
+    "alt": "Fresh vegetable–themed website design for a healthy food and nutrition platform",
+    "title": "Healthy Food Landing Page UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 4,
+    "img": "images/gallery-images/Course.png",
+    "alt": "Multi-industry concept onboarding UI design for a learning and education application",
+    "title": "Educational Mobile App Onboarding Screens",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 5,
+    "img": "images/gallery-images/Cardekho.png",
+    "alt": "User interface of a modern car rental app with easy booking options",
+    "title": "Car Rental Mobile App UI – Vehicle Booking Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 6,
+    "img": "images/gallery-images/scooter5.png",
+    "alt": "Clean and modern app interface for booking and managing electric scooters",
+    "title": "Electric Scooter Mobile App UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 7,
+    "img": "images/gallery-images/Job.png",
+    "alt": "Simple and smart UI design of a mobile app for career seekers to search and apply for jobs",
+    "title": "Job Search Mobile App UI Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 8,
+    "img": "images/gallery-images/scooter3.png",
+    "alt": "Minimal scooter-themed website interface showcasing scooter features and booking options",
+    "title": "Electric Scooter Website UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 9,
+    "img": "images/gallery-images/food (1).png",
+    "alt": "Clean and fresh landing page design for ordering organic vegetables online",
+    "title": "Organic Food Ordering Website UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 10,
+    "img": "images/gallery-images/scooter2.png",
+    "alt": "Minimalist layout of an online store for browsing and purchasing e-scooters",
+    "title": "Modern Electric Scooter E-Commerce Web UI",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 11,
+    "img": "images/gallery-images/Bikers.png",
+    "alt": "Dark-themed modern website interface for selling bikes and cycling gear",
+    "title": "Bike E-Commerce Website UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 12,
+    "img": "images/gallery-images/Tourism.png",
+    "alt": "Travel exploration app interface for trip planning and destination discovery",
+    "title": "Tourism and Travel Mobile App UI Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 13,
+    "img": "images/gallery-images/Smart light.png",
+    "alt": "Clean user interface for controlling smart lights and connected home devices",
+    "title": "Smart Home IoT App UI Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 14,
+    "img": "images/gallery-images/mexican food.png",
+    "alt": "Minimal green-themed restaurant app design for browsing and ordering food",
+    "title": "Restaurant and Food Delivery App UI Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 15,
+    "img": "images/gallery-images/Electronic.png",
+    "alt": "Modern shopping app interface for buying electronic gadgets and products",
+    "title": "Electronics E-Commerce App UI Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 16,
+    "img": "images/gallery-images/Space.png",
+    "alt": "Creative website interface showcasing space missions and astronomy content",
+    "title": "Space Exploration Website UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 17,
+    "img": "images/gallery-images/Payment.png",
+    "alt": "Sleek and modern interface for digital payments and financial solutions",
+    "title": "Fintech Payment Web App UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 18,
+    "img": "images/gallery-images/Half life.png",
+    "alt": "Futuristic website interface for a sci-fi entertainment or gaming platform",
+    "title": "Sci-Fi Entertainment Landing Page UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 19,
+    "img": "images/gallery-images/Healthy salad.png",
+    "alt": "Fresh and clean mobile interface for browsing and ordering healthy salads",
+    "title": "Healthy Food Ordering App UI Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 20,
+    "img": "images/gallery-images/Bike.png",
+    "alt": "User interface of a booking app for renting two-wheeler bikes",
+    "title": "Bike Rental Mobile App UI Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 21,
+    "img": "images/gallery-images/health.png",
+    "alt": "Smart mobile dashboard design for personal health and medical tracking",
+    "title": "Healthcare Mobile App UI Dashboard",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 22,
+    "img": "images/gallery-images/Nike Collection.png",
+    "alt": "Clean product browsing interface for a sneaker shopping mobile app",
+    "title": "Sneaker Collection E-Commerce App UI",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 23,
+    "img": "images/gallery-images/Nike.png",
+    "alt": "Modern mobile interface for browsing and purchasing sneakers online",
+    "title": "Shoe Store E-Commerce Mobile App UI",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 24,
+    "img": "images/gallery-images/Juice.png",
+    "alt": "Fun and colorful product landing page for a fresh juice brand",
+    "title": "Juice Brand Promotion Website UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 25,
+    "img": "images/gallery-images/Consultant.png",
+    "alt": "Corporate website design for showcasing consultancy services",
+    "title": "Business Consultant Landing Page UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 26,
+    "img": "images/gallery-images/Coffee.png",
+    "alt": "Warm and inviting web interface for a café or coffee shop brand",
+    "title": "Coffee Shop Website UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 27,
+    "img": "images/gallery-images/Art frame.png",
+    "alt": "Clean and elegant website design for browsing global art collections",
+    "title": "Art Gallery Website UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 28,
+    "img": "images/gallery-images/wine.png",
+    "alt": "Elegant shopping website interface for browsing and purchasing wines",
+    "title": "Wine Store E-Commerce Web UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 29,
+    "img": "images/gallery-images/Beat.png",
+    "alt": "Minimalist website interface for promoting modern audio headphones",
+    "title": "Headphone Product Landing Page UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 30,
+    "img": "images/gallery-images/Interior.png",
+    "alt": "Stylish home decor and interior design website layout",
+    "title": "Interior Design Website UI Concept",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 31,
+    "img": "images/gallery-images/Yoga.png",
+    "alt": "Clean app interface for yoga sessions, meditation, and wellness tracking",
+    "title": "Yoga and Wellness Mobile App UI Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 32,
+    "img": "images/gallery-images/Finance (1).png",
+    "alt": "Stylish money management dashboard for budgeting and tracking expenses",
+    "title": "Personal Finance Mobile App UI Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 33,
+    "img": "images/gallery-images/Paynow.png",
+    "alt": "Digital banking app interface with finance dashboard and analytics",
+    "title": "Smart Banking Mobile App UI Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 34,
+    "img": "images/gallery-images/Watch Movies in VR.png",
+    "alt": "Cinema-style mobile interface for watching movies in VR headsets",
+    "title": "Virtual Reality Movie App UI Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 35,
+    "img": "images/gallery-images/iron man.png",
+    "alt": "Entertainment app interface for browsing and streaming movies online",
+    "title": "Movie Streaming Mobile App UI Design",
+    "tags": ["App", "Mobile app"]
+  },
+  {
+    "id": 36,
+    "img": "images/gallery-images/NFTs.png",
+    "alt": "Digital artwork and collectibles platform showcasing NFTs",
+    "title": "NFT Marketplace UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 37,
+    "img": "images/gallery-images/Growthspace.png",
+    "alt": "Business platform website design for Growthspace services",
+    "title": "Growthspace Corporate Website UI",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 38,
+    "img": "images/gallery-images/Centocode Website.png",
+    "alt": "Updated website design for Centocode showcasing modern layout and features",
+    "title": "Centocode Website Redesign UI",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 39,
+    "img": "images/gallery-images/Modern Admin Dashboard UI Design.webp",
+    "alt": "Data-driven admin panel interface with charts, tables, and analytics",
+    "title": "Modern Admin Dashboard UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 40,
+    "img": "images/gallery-images/Modern SaaS Pricing Page – Clean & User-Friendly UI Design.webp",
+    "alt": "Clean and user-friendly pricing table for a SaaS product website",
+    "title": "SaaS Pricing Page UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 41,
+    "img": "images/gallery-images/Clean Blog & Resource Hub UI – Modern SaaS UI Design.webp",
+    "alt": "Modern website interface for SaaS blogs and educational resources",
+    "title": "Blog and Resource Hub UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 42,
+    "img": "images/gallery-images/SaaS Project Dashboard – Table View UI Design.webp",
+    "alt": "Table view of a SaaS project management dashboard with tasks and progress",
+    "title": "SaaS Project Dashboard UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 43,
+    "img": "images/gallery-images/WhatsApp CRM Automation Features – Landing Page UI Design.webp",
+    "alt": "Modern landing page design showcasing CRM automation features integrated with WhatsApp",
+    "title": "WhatsApp CRM Automation Landing Page UI",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 44,
+    "img": "images/gallery-images/file upload form.webp",
+    "alt": "Clean website interface for uploading and managing files",
+    "title": "File Upload Form Web UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 45,
+    "img": "images/gallery-images/404 error.png",
+    "alt": "Creative website error page design showing a 404 page not found message",
+    "title": "404 Error Page UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 46,
+    "img": "images/gallery-images/500 error.png",
+    "alt": "Modern error screen design for 500 internal server error message",
+    "title": "500 Error Page UI Design",
+    "tags": ["web", "design"]
+  },
+  {
+    "id": 47,
+    "img": "images/gallery-images/Mobile app plans.png",
+    "alt": "Clean pricing page interface for mobile app subscription plans",
+    "title": "Mobile App Pricing Plans UI Design",
+    "tags": ["App", "Mobile app"]
+  }
+]
